@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+html {
+  --std-title-font-size: 27px;
+  --light-bgcolor: #111111;
+  --graysacale-50: #FBFBFB;
+  --prime-300: #D7FC70;
+  --tst-red: #EF4444;
+  --test-green: #29AE29;
+}
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 7fr 17fr 76fr;
+  grid-template-areas:
+    "nav"
+    "status"
+    "card";
+}
+
+
+.card {
+  grid-area: card;
+  background-color: black;
+  border-radius: 32px 32px 0px 0px;
+  padding: 23px;
+  display: grid;
+}
+
+
+.tstbtn {
+  background-color: var(--prime-300);
+  height: 56px;
+  border-radius: 18px;
+  border: 0px solid;
+  font-weight: 500;
+}
+
+.status {
+  justify-self: center;
+  align-self: center;
+  font-size: xxx-large;
+  font-family: bungee;
+  letter-spacing: 1.5px;
+}
+
+.red {
+  color: var(--tst-red);
+}
+
+.green {
+  color: #29AE29;
+}
+
+.nav{
+  padding:10px ;
+}
+
+
+.arrow {
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  height: 40px;
+  width: 40px
+}
