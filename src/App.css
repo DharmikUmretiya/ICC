@@ -14,6 +14,7 @@ html {
   width: 100%;
   display: grid;
   grid-template-rows: 28fr 72fr;
+  overflow: hidden;
   grid-template-areas:
     "status"
     "card";
