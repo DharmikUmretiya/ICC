@@ -45,7 +45,7 @@ html {
   font-size: xxx-large;
   font-family: bungee;
   letter-spacing: 1.5px;
-  color:rgb(235, 235, 89);
+  color: rgb(235, 235, 89);
 }
 
 
@@ -82,32 +82,31 @@ html {
 
 }
 
-.gate-list::-webkit-scrollbar{
+.gate-list::-webkit-scrollbar {
   display: none;
 }
 
-.option{
+.option {
   scroll-snap-align: start;
 }
 
 
-.grad-r{
+.grad-r {
   position: relative;
-  right:40px;
-  height: 36px;
-  background-color: #090b73;
-  width: 40px;
-background: #000000;
-background: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.grad-l{
-  position: relative;
-  left:40px;
+  right: 40px;
   height: 36px;
   background-color: #090b73;
   width: 40px;
   background: #000000;
-background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.grad-l {
+  position: relative;
+  left: 40px;
+  height: 36px;
+  background-color: #090b73;
+  width: 40px;
+  background: #000000;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}

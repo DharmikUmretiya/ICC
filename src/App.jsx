@@ -2,16 +2,15 @@ import './App.css'
 
 function App() {
 
-  function goFullscreen() {
+  function goFullscreen(){
     document.documentElement.requestFullscreen();
   }
-  goFullscreen
 
   return (
     <>
       <div className="container">
         <div className="status">
-          <span className="testres">
+          <span className="testres" onClick={()=>{goFullscreen()}}>
             <span className='green'>T</span>
             <span className='red'>F</span>
             <span className='green'>T</span>
