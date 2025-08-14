@@ -13,7 +13,7 @@ html {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 28fr 72fr;
+  grid-template-rows: 75fr 25fr;
   overflow: hidden;
   grid-template-areas:
     "status"
@@ -27,8 +27,10 @@ html {
   border-radius: 32px 32px 0px 0px;
   padding: 23px;
   display: grid;
-  grid-template-rows: 2fr 10fr;
+  grid-template-rows: 10fr 12fr;
+  overflow: scroll;
 }
+
 
 
 .tstbtn {
@@ -79,7 +81,6 @@ html {
   gap: 30px;
   list-style-type: none;
   font-size: x-large;
-
 }
 
 .gate-list::-webkit-scrollbar {
@@ -110,3 +111,4 @@ html {
   background: #000000;
   background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
+
