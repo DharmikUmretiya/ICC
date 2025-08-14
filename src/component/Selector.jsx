@@ -1,26 +1,31 @@
-export default function Selector() {
+import { useRef, useState } from "react";
+
+export default function Selector({ Gates_Array ,handleScroll}) {
+
+  const Slider = useRef()
+ 
 
   return (
     <>
       <div className="scroll">
         <div>
           <div className="grad-l">
-        </div>
+          </div>
         </div>
         <div className="content-scroll">
-          <div className='gate-list'>
-            <div className='option'>7400</div>
-            <div className='option'>7400</div>
-            <div className='option'>7402</div>
-            <div className='option'>7404</div>
-            <div className='option'>7408</div>
-            <div className='option'>7410</div>
-            <div className='option'>7410</div>
+          <div className='gate-list' ref={Slider} onScroll={() => { handleScroll(Slider.current.scrollLeft) }}>
+            {
+              Gates_Array.map((Gate_Type, index) => {
+                return (
+                  <div className='option' key={index}>{Gate_Type}</div>
+                )
+              })
+            }
           </div>
         </div>
         <div>
           <div className="grad-r">
-        </div>
+          </div>
         </div>
       </div>
     </>
