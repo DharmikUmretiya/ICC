@@ -2,12 +2,16 @@ import './App.css'
 import Status from './component/Status.jsx'
 import Selector from './component/Selector.jsx'
 import Button from './component/Button.jsx'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 function App() {
-
+  const wsRef = useRef(null);
   const [gate, setGate] = useState("7400")
+  const [Result, setResult] = useState("")
+  const [IsConnected, setConnection] = useState(false)
+  const Test_gate_btn = useRef()
+
 
   function handleScroll(Index) {
     (Index >= (-5) && Index < (5)) ? setGate("7400") : null;
@@ -18,6 +22,38 @@ function App() {
     (Index >= (420) && Index < (430)) ? setGate("7486") : null;
   }
 
+  function handleClick() {
+    const current_Test_Gate = (Test_gate_btn.current.innerText).slice(5)
+    wsRef.current.send(current_Test_Gate)
+  }
+
+
+  useEffect(() => {
+    wsRef.current = new WebSocket("ws://10.78.105.225:8080")
+    //"ws://192.168.4.1/ws"
+    wsRef.current.addEventListener("open", () => {
+      console.log("Server is connected")
+      setConnection(true)
+    })
+
+    wsRef.current.addEventListener("message", (msg) => {
+        setResult(msg.data)
+    })
+
+    Test_gate_btn.current.addEventListener("click", handleClick)
+
+    wsRef.current.addEventListener("close", () => {
+      setConnection(false)
+    })
+
+    return (
+      () => {
+        wsRef.current.close()
+        Test_gate_btn.current.removeEventListener("click", handleClick)
+      }
+    )
+  }, [])
+
 
 
 
@@ -25,7 +61,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <Status Result="TTSS" />
+        <Status Result={Result} />
         <div className="card">
           <Selector Gates_Array={[
             "Start",
@@ -39,7 +75,7 @@ function App() {
           ]
           }
             handleScroll={handleScroll} />
-          <Button Gate_Type={gate} HandleClick="" IsConnected={true} />
+          <Button Gate_Type={gate} Address={Test_gate_btn} IsConnected={IsConnected} />
         </div>
       </div>
     </>

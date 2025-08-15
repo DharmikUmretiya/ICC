@@ -9,7 +9,7 @@ export default function Status({ Result }) {
         <>
             <div className="status">
                 <span className="testres" onClick={() => { goFullscreen() }}>
-                    {Result === "" ? Result : "Welcome!"}
+                    {Result}
                 </span>
             </div>
         </>
