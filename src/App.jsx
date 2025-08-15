@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   const wsRef = useRef(null);
   const [gate, setGate] = useState("7400")
-  const [Result, setResult] = useState("")
+  const [Result, setResult] = useState("Welcome!")
   const [IsConnected, setConnection] = useState(false)
   const Test_gate_btn = useRef()
 
