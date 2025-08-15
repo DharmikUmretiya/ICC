@@ -29,7 +29,7 @@ function App() {
 
 
   useEffect(() => {
-    wsRef.current = new WebSocket("wss://10.78.105.225:8080")
+    wsRef.current = new WebSocket("wss://iccback.onrender.com")
     //"ws://192.168.4.1/ws"
     wsRef.current.addEventListener("open", () => {
       console.log("Server is connected")
