@@ -34,6 +34,7 @@ function App() {
     //"10.172.164.225///ws://192.168.4.1/ws"
     wsRef.current.addEventListener("open", () => {
       console.log("Server is connected")
+      wsRef.send("Server is connected")
       setConnection(true)
     })
 
