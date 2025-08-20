@@ -25,6 +25,7 @@ function App() {
   function handleClick() {
     const current_Test_Gate = (Test_gate_btn.current.innerText).slice(5)
     wsRef.current.send(current_Test_Gate)
+    Test_gate_btn.disabled = true;
   }
 
 
@@ -38,6 +39,7 @@ function App() {
 
     wsRef.current.addEventListener("message", (msg) => {
         setResult(msg.data)
+        Test_gate_btn.disabled = false;
     })
 
     Test_gate_btn.current.addEventListener("click", handleClick)
