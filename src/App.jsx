@@ -29,8 +29,8 @@ function App() {
 
 
   useEffect(() => {
-    wsRef.current = new WebSocket("ws://10.78.105.225:8080")
-    //"ws://192.168.4.1/ws"
+    wsRef.current = new WebSocket("ws://192.168.4.1/ws")
+    //""
     wsRef.current.addEventListener("open", () => {
       console.log("Server is connected")
       setConnection(true)
